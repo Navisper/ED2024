@@ -12,18 +12,20 @@ public class App {
         String hola = o.next();
 
         List<Tarea> tareas = new ArrayList<>();
-        tareas.add(new Tarea("xd", "xd"));
-        tareas.add(new Tarea("xdd", "xdd"));
+        tareas.add(new Tarea("xd"));
+        tareas.add(new Tarea("xdd"));
         int xd;
         int dx;
 
+        System.out.println("\nbienvenido al gestor de tareas en java\n\n");
+
+        System.out.println("\nescoje una de las siguientes opciones\n1) listar tareas\n2) agregar tarea\n3) eliminar tarea\n4) salir del programa");
+
+        xd = h.nextInt();
+
         while( hola.equals("1"))
         {
-            System.out.println("\nbienvenido al gestor de tareas en java\n\n");
-
-            System.out.println("\nescoje una de las siguientes opciones\n1) listar tareas\n2) agregar tarea\n3) eliminar tarea\n4) salir del programa");
-
-            xd = h.nextInt();
+            
             
             String datos;
 
@@ -34,17 +36,14 @@ public class App {
                     tareas.get(i).datos();
                 }
 
-                System.out.println("1) listar tareas\n2) agregar tarea\n3) eliminar tarea\n4) salir del programa");
-                xd = h.nextInt();
             }
             else if(xd == 2)
             {
                 System.out.println("por favor escriba el nombre de su tarea para añadirla");
                 datos = h.next();
-                tareas.add(new Tarea(hola, datos));
+                Tarea hol = new Tarea(datos);
+                tareas.add(hol);
 
-                System.out.println("1) listar tareas\n2) agregar tarea\n3) eliminar tarea\n4) salir del programa");
-                xd = h.nextInt();
             }
             else if(xd == 3)
             {
@@ -52,12 +51,11 @@ public class App {
                 dx = h.nextInt();
 
                 tareas.remove(dx);
-                System.out.println("1) listar tareas\n2) agregar tarea\n3) eliminar tarea\n4) salir del programa");
-                xd = h.nextInt();
             }
             else if(xd==4)
             {
                 hola = "2";
+                break;
             }
             else
             {
@@ -66,6 +64,8 @@ public class App {
                 xd = h.nextInt();
             }
 
+            System.out.println("1) listar tareas\n2) agregar tarea\n3) eliminar tarea\n4) salir del programa");
+            xd = h.nextInt();
             
         }
     }
